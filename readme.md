@@ -1,37 +1,125 @@
-Introduction
+# Frontend Assessment - Completed
+
+A responsive web application built with **React** and **Tailwind CSS**, featuring two exercises that follow the technical brief.
+
+## Introduction
+
+Thanks for taking the time to review this submission.
+
 ---
-Thanks for taking the time to complete this frontend technical assessment. We will be focusing on software quality (scalability, readability, maintainability, etc.) and your eye for detail. You may include any libraries, but Vue.js or React is preferred, and jQuery is not recommended. Along with following best practices, bonus points for following our [coding guidelines](https://github.com/mindarc/frontend-assessment/wiki/Coding-guidelines). 
 
-Exercise 1
+## Live Demo
+
+| Route | URL |
+| --- | --- |
+| Home | https://frontend-assessment.lethithuphuong03122004.workers.dev/ |
+| Exercise 1 | https://frontend-assessment.lethithuphuong03122004.workers.dev/exercise1 |
+| Exercise 2 | https://frontend-assessment.lethithuphuong03122004.workers.dev/exercise2 |
+
+Local routes: `http://localhost:5173`, `/exercise1`, `/exercise2`
+
 ---
-Build a responsive page based on the designs.
 
-##### Requirements
-1. Match the designs exactly.
-2. Needs to be responsive.
+## Exercises Overview
 
-##### Designs
-https://www.figma.com/design/OGS3UnHSQ22l0rXXsY7wnU/FE-Test?node-id=0-1&p=f&m=dev
+### Exercise 1
 
-##### Assets
-Export from Figma
+Build a responsive page based on the provided design.
 
-Exercise 2
+**Design:** [FE-Test (Figma)](https://www.figma.com/design/OGS3UnHSQ22l0rXXsY7wnU/FE-Test?node-id=0-1&p=f&m=dev)
+
+**Features**
+
+- ✅ Match design closely (layout, spacing, typography, imagery)
+- ✅ Fully responsive layout (desktop and mobile)
+- ✅ Hero with desktop/mobile images, arrows, dots, and autoplay
+- ✅ Product grid with reusable card component
+
+### Exercise 2
+
+Read `src/data/data.json` and display content as tabs on desktop and accordion on mobile.
+
+**Features**
+
+- ✅ Tabs on desktop (`>= 768px`)
+- ✅ Accordion on mobile (`< 768px`)
+- ✅ Only one tab/accordion open at a time
+- ✅ First item open on initial load
+- ✅ Clicking active accordion item closes it (mobile)
+- ✅ Smooth transitions/animations for better UX
+
 ---
-Read the `data.json` file and display the data as tabs on desktop and an accordion on mobile.
 
-##### Requirements
-1. Display data in tabs on desktop.
-2. Display data in an accordion on mobile.
-3. Only 1 accordion/tab should be open at a time.
-4. Open the first accordion/tab on load.
-5. If the open accordion is selected, close it.
+## Installation & Setup
 
-###### Bonus points
-* Improve the user experience with meaningful animations/transitions.
-* Design and styling.
-* Explain why the result of `('b' + 'a' + + 'a' + 'a').toLowerCase()` is `banana`.
+### Prerequisites
 
-Submission
+- Node.js (v18 or higher)
+- npm (or yarn/pnpm)
+
+### Quick Start
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
+```
+
 ---
-We recommend submitting your completed assessment as a forked repository. Please replace README content with instructions and relevant documentation.
+
+## Tech Stack
+
+| Category | Value |
+| --- | --- |
+| Framework | React 19 |
+| Routing | React Router |
+| Styling | Tailwind CSS v4 + SCSS |
+| Build Tool | Vite 7 |
+| Deployment | Cloudflare Workers |
+
+---
+
+## Key Features
+
+- Responsive design with clear breakpoints
+- Component-based architecture for readability and maintainability
+- Reusable UI blocks (`HeroSection`, `ProductGridSection`, `TabList`, `AccordionList`, `ProductCard`, `SafeContent`)
+- Accessibility improvements (semantic elements + ARIA where needed)
+- Data-driven rendering from JSON/config files
+
+---
+
+## Project Structure
+
+- `src/` — Main source code
+- `src/assets/` — Images and other static assets
+- `src/pages/` — Page components for each route
+- `src/components/` — Reusable React components
+- `src/data/` — Data source for Exercise 1, Exercise 2
+
+---
+
+## Bonus
+
+**Question:** Why does `('b' + 'a' + + 'a' + 'a').toLowerCase()` result in `banana`?
+
+**Answer:** This is JavaScript type coercion combined with unary plus.
+
+```js
+('b' + 'a' + + 'a' + 'a').toLowerCase()
+// 'b' + 'a'   -> 'ba'
+// + 'a'       -> NaN
+// 'ba' + NaN  -> 'baNaN'
+// 'baNaN' + 'a' -> 'baNaNa'
+// toLowerCase() -> 'banana'
+```
+
+The unary `+` tries to convert `'a'` to a number, returns `NaN`, and then string concatenation produces `'baNaNa'`, which becomes `'banana'` after lowercase conversion.
